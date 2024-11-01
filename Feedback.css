@@ -1,0 +1,106 @@
+:root {
+    --green: rgb(0, 128, 0);
+    --orange: rgb(200, 132, 7);
+    --black: #1e1e1f;
+    --white: rgb(255, 255, 255);
+    --light-color: #666;
+    --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+    --border: .2rem solid rgba(0,0,0,1);
+    --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+    --outline: .1rem solid rgba(0,0,0,1);
+}
+
+.feedback {
+    background-color: #f7f7f7;
+    padding: 3rem;
+}
+
+.feedback .heading {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--black);
+    margin-bottom: 2rem;
+}
+
+.feedback-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+.feedback-container h3 {
+    font-size: 2.0rem; 
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.feedback-container h4 {
+    font-size: 2.0rem; 
+    color: var(--black);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.feedback form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.feedback .box {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    border: var(--outline);
+    box-shadow: var(--box-shadow);
+    font-size: 1.6rem;
+}
+
+.feedback .rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feedback .rating input[type="radio"] {
+    display: none;
+}
+
+.feedback .rating label {
+    background: var(--orange);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 2rem;
+}
+
+.feedback .rating label:hover {
+    background-color: darkorange;
+}
+
+.feedback .rating input[type="radio"]:checked + label {
+    background-color: var(--green);
+}
+
+.feedback .btn {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+.feedback .btn:hover {
+    background-color: darkgreen;
+}

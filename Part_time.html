@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ready to Join - Pet Cuddle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Part_time.css">
+    <style>
+        .alert {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f44336;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            font-size: 16px;
+            text-align: center;
+        }
+        .alert.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fa-solid fa-paw"></i>Pet<span>Cuddle</span></a>
+        <nav class="navbar">
+            <div class="nav-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html">Services</a>
+                <div class="sub-menu">
+                    <a href="services.html">Health Check Up</a>
+                    <a href="services.html">Pet Grooming</a>
+                    <a href="services.html">Daycare Services</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="pricing.html">Pricing</a>
+                <div class="sub-menu">
+                    <a href="pricing.html">Basic</a>
+                    <a href="pricing.html">Pro</a>
+                    <a href="pricing.html">Premium</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html">About Us</a>
+                <div class="sub-menu">
+                    <a href="about.html">About Us</a>
+                    <a href="about.html">Our Team</a>
+                    <a href="about.html">Client Reviews</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html">Contact Us</a>
+                <div class="sub-menu">
+                    <a href="contact.html">Contact Form</a>
+                    <a href="contact.html">Locations</a>
+                    <a href="contact.html">Help</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="form-link">Form</a>
+                <div class="sub-menu">
+                    <a href="Registration.html">Registration Forms</a>
+                    <a href="Feedback.html">Feedback Form</a>
+                    <a href="Part_time.html">Want to join us (Part-time)</a>
+                </div>
+            </div>
+        </nav>
+        <i id="menu-btn" class="fas fa-bars"></i>
+    </header>
+
+    <section class="join">
+        <h1 class="heading">Join Our Team ᨐฅ</h1>
+        <div class="join-container">
+            <form id="join-form" action="/submit-application" method="post" onsubmit="return validateForm()">
+                <h3>Ready to Join?</h3>
+                <p>Fill out the form below to apply for a part-time position at Pet Cuddle.</p>
+                
+                <input type="text" placeholder="Your Full Name" name="full-name" id="full-name" class="box">
+                <input type="email" placeholder="Your Email Address" name="email" id="email" class="box">
+                <input type="tel" placeholder="Your Contact Number" name="contact" id="contact" class="box" pattern="[0-9]{10}" title="Please enter a 10-digit phone number">
+                
+                <div class="box select-box">
+                    <label for="availability">Availability (Days/Hours):</label>
+                    <select id="availability" class="select">
+                        <option value="" disabled selected>Select your availability</option>
+                        <option value="weekdays-morning">Weekdays - Morning</option>
+                        <option value="weekdays-afternoon">Weekdays - Afternoon</option>
+                        <option value="weekdays-evening">Weekdays - Evening</option>
+                        <option value="weekends-morning">Weekends - Morning</option>
+                        <option value="weekends-afternoon">Weekends - Afternoon</option>
+                        <option value="weekends-evening">Weekends - Evening</option>
+                    </select>
+                </div>
+                
+                <div class="box select-box">
+                    <label for="role">Preferred Role:</label>
+                    <select id="role" class="select">
+                        <option value="" disabled selected>Select your preferred role</option>
+                        <option value="pet-groomer">Pet Groomer</option>
+                        <option value="pet-trainer">Pet Trainer</option>
+                        <option value="daycare-attendant">Daycare Attendant</option>
+                        <option value="health-assistant">Health Assistant</option>
+                        <option value="customer-service">Customer Service</option>
+                    </select>
+                </div>
+
+                <div class="box select-box">
+                    <label for="experience">Experience Level:</label>
+                    <select id="experience" class="select">
+                        <option value="" disabled selected>Select your experience level</option>
+                        <option value="none">No Experience</option>
+                        <option value="beginner">Beginner (1-2 years)</option>
+                        <option value="intermediate">Intermediate (3-5 years)</option>
+                        <option value="advanced">Advanced (5+ years)</option>
+                    </select>
+                </div>
+
+                <div class="box">
+                    <label for="portfolio">Portfolio/LinkedIn:</label>
+                    <input type="url" id="portfolio" placeholder="Link to your portfolio or LinkedIn profile" class="box">
+                </div>
+
+                <div class="box">
+                    <label for="start-date">Preferred Start Date:</label>
+                    <input type="date" id="start-date" class="box">
+                </div>
+
+                <textarea placeholder="Tell us why you'd be a great fit for this role" class="box"></textarea>
+
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">terms and conditions</a></label>
+
+                <input type="submit" value="Submit Application" class="btn">
+            </form>
+            <div id="alert" class="alert">Please fill out all required fields.</div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer-content">
+            <h3><i class="fa-solid fa-paw" style="color: green;"></i>Pet<span>Cuddle</span></h3>
+            <p>Experience peace of mind knowing your pets are in safe hands, with services tailored to meet their unique needs. Visit us anytime!!≽ܫ≼ <br> TIMING: Monday to Friday (9am to 9pm)</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="footer-bottom">
+        <p>copyright &copy;2024 <a href="#">Anushka</a> - Pet Cuddle</p>
+    </div>
+    
+    <script src="https://kit.fontawesome.com/cb8535f973.js" crossorigin="anonymous"></script>
+    <script>
+        function validateForm() {
+            const fullName = document.getElementById('full-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const contact = document.getElementById('contact').value.trim();
+            const alertBox = document.getElementById('alert');
+            
+            if (!fullName || !email || !contact) {
+                alertBox.classList.add('show');
+                setTimeout(() => {
+                    alertBox.classList.remove('show');
+                }, 3000); 
+            }
+
+            
+            const contactPattern = /^[0-9]{10}$/;
+            if (!contactPattern.test(contact)) {
+                alertBox.textContent = 'Please enter a valid 10-digit phone number.';
+                alertBox.classList.add('show');
+                setTimeout(() => {
+                    alertBox.classList.remove('show');
+                }, 3000);
+                return false; 
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

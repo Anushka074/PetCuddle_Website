@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form - Pet Care Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Feedback.css">
+    <script>
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const rating = document.querySelector('input[name="rating"]:checked');
+            const feedback = document.getElementById('feedback').value;
+
+            if (name.trim() === '') {
+                alert('Name is required.');
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (phone.trim() !== '') {
+                if (!/^\d+$/.test(phone)) {
+                    alert('Phone number must be numeric.');
+                    return false;
+                }
+                if (phone.length < 10) {
+                    alert('Phone number must be at least 10 digits long.');
+                    return false;
+                }
+            }
+
+            if (!rating) {
+                alert('Please rate our service.');
+                return false;
+            }
+
+            if (feedback.trim() === '') {
+                alert('Feedback is required.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><i class="fa-solid fa-paw"></i>Pet<span>Cuddle</span></a>
+        <nav class="navbar">
+            <div class="nav-item">
+                <a href="index.html">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="services.html">Services</a>
+                <div class="sub-menu">
+                    <a href="services.html">Health Check Up</a>
+                    <a href="services.html">Pet Grooming</a>
+                    <a href="services.html">Daycare Services</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="pricing.html">Pricing</a>
+                <div class="sub-menu">
+                    <a href="pricing.html">Basic</a>
+                    <a href="pricing.html">Pro</a>
+                    <a href="pricing.html">Premium</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html">About Us</a>
+                <div class="sub-menu">
+                    <a href="about.html">About Us</a>
+                    <a href="about.html">Our Team</a>
+                    <a href="about.html">Client Reviews</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html">Contact Us</a>
+                <div class="sub-menu">
+                    <a href="contact.html">Contact Form</a>
+                    <a href="contact.html">Locations</a>
+                    <a href="contact.html">Help</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" id="form-link">Form</a>
+                <div class="sub-menu">
+                    <a href="Registration.html">Registration Forms</a>
+                    <a href="Feedback.html">Feedback Form</a>
+                    <a href="Part_time.html">Want to join us (Part-time)</a>
+                </div>
+            </div>
+        </nav>
+        <i id="menu-btn" class="fas fa-bars"></i>
+    </header>
+
+    <section class="feedback">
+        <h1 class="heading">We Value Your Feedback ᨐฅ</h1>
+        <div class="feedback-container">
+            <form action="/submit-feedback" method="post" id="feedback-form" onsubmit="return validateForm()">
+                <h3>Share Your Thoughts</h3>
+                <input type="text" id="name" placeholder="Enter Your Full Name" class="box" required>
+                <input type="email" id="email" placeholder="Enter Your Email" class="box" required>
+                <input type="tel" id="phone" placeholder="Enter Your Phone Number" class="box">
+                
+                <label for="rating" class="label"><h4>Rate Our Service:</h4></label>
+                <div class="rating">
+                    <input type="radio" id="rating-1" name="rating" value="1">
+                    <label for="rating-1">1</label>
+                    <input type="radio" id="rating-2" name="rating" value="2">
+                    <label for="rating-2">2</label>
+                    <input type="radio" id="rating-3" name="rating" value="3">
+                    <label for="rating-3">3</label>
+                    <input type="radio" id="rating-4" name="rating" value="4">
+                    <label for="rating-4">4</label>
+                    <input type="radio" id="rating-5" name="rating" value="5">
+                    <label for="rating-5">5</label>
+                </div>
+
+                <textarea id="feedback" placeholder="Your Feedback" class="box" rows="6" required></textarea>
+                
+                <input type="submit" value="Submit Feedback" class="btn">
+            </form>
+        </div>
+    </section>
+
+    <section class="footer">
+        <div class="footer-content">
+            <h3><i class="fa-solid fa-paw" style="color: green;"></i>Pet<span>Cuddle</span></h3>
+            <p>Experience peace of mind knowing your pets are in safe hands, with services tailored to meet their unique needs. Visit us anytime!!≽ܫ≼ <br> TIMING: Monday to Friday (9am to 9pm)</p>
+            <ul class="socials">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="footer-bottom">
+        <p>copyright &copy;2024 <a href="#">Anushka</a> - Pet Cuddle </p>
+    </div>
+    <script src="https://kit.fontawesome.com/cb8535f973.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
